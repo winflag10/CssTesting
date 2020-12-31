@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+
+		html{
+			height:100vh;
+			display: flex;
+			overflow: hidden;
+		}
+
+		body{
+			display: flex;
+			flex:1;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			background-color: #e5ac3f;
+			font-family: 'Hanalei Fill', cursive;
+			color: #312f17;
+			font-size: 3rem;
+		}
+
+		#hex-menu{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			transform: scale(0.8);
+		}
+
+		#game-text{
+			display: none;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+
+		#game-text p{
+			opacity: 0;
+			transform: translateY(-30px);
+			transition-duration: 400ms;
+		}
+
+		#game-text p.show{
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		.row{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.r1{
+			transform: translateY(62.74px);
+		}
+
+		.r3{
+			transform: translateY(-62.74px);
+		}
+
+		.hex{
+			width: 200px;
+			height: 115.48px;
+			background-color: #eec33d;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			transition-duration: 250ms;
+			margin: 7px;
+			margin-top: 67.48px;
+			margin-bottom: 67.49px;
+		}
+
+		.hex::before{
+			content: "";
+			width: 200px;
+			height: 115.48px;
+			position: absolute;
+			background-color: #eec33d;
+			transform: rotate(60deg);
+			transition-duration: 250ms;
+		}
+
+		.hex::after{
+			content: "";
+			width: 200px;
+			height: 115.48px;
+			position: absolute;
+			background-color: #eec33d;
+			transform: rotate(-60deg);
+			transition-duration: 250ms;
+		}
+
+		.hex.anim:hover{
+			transform: scale(1.1);
+			cursor: pointer;
+		}
+
+		.hex.anim:hover>span{
+			height:125.48px;
+		}
+
+		.hex.anim:hover>span::before{
+			height:125.48px;
+		}
+
+		.hex.anim:hover>span::after{
+			height:125.48px;
+		}
+
+		.hex>span{
+			width: 80%;
+			height: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			z-index: 1;
+			border-left: 1px solid #312f17;
+			border-right: 1px solid #312f17;
+			transition-duration: 300ms;
+		}
+
+		.hex.anim>span::before{
+			content: "";
+			width: 100%;
+			height: 0;
+			position: absolute;
+			z-index: 1;
+			transform: rotate(60deg);
+			border-left: 1px solid #312f17;
+			border-right: 1px solid #312f17;
+			transition-duration: 300ms;
+		}
+
+		.hex.anim>span::after{
+			content: "";
+			width: 100%;
+			height: 0;
+			position: absolute;
+			z-index: 1;
+			transform: rotate(-60deg);
+			border-left: 1px solid #312f17;
+			border-right: 1px solid #312f17;
+			transition-duration: 300ms;
+		}
+
+		.hex>span>i{
+			margin-left: 10px;
+		}
+
+		.hex-grow{
+			transform: rotate(30deg) scale(20);
+			z-index: 4;
+		}
+
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body id="body">
+	<section id="hex-menu">
+		<div class="row r1">
+			<div class="hex"><span>E</span></div>
+			<div class="hex"><span>X</span></div>
+		</div>
+		<div class="row r2">
+			<div class="hex"><span>H</span></div>
+			<div class="hex anim" onclick="start(this);"><span><i class="fa fa-play"></i></span></div>
+			<div class="hex"><span></span></div>
+		</div>
+		<div class="row r3">
+			<div class="hex"><span></span></div>
+			<div class="hex"><span></span></div>
+		</div>
+	</section>
+	<section id="game-text">
+		<p id="game-text-p">Ta Da!</p>
+	</section>
+	
+	<script type="text/javascript">
+		function start(btn){
+			btn.classList.add('hex-grow');
+			btn.classList.remove('anim');
+			btn.innerHTML = ''
+
+			setTimeout(function(){
+				document.getElementById("body").style.backgroundColor = "#eec33d"
+			 	document.getElementById("game-text").style.display = "flex"
+			 	document.getElementById("hex-menu").style.display = "none"
+
+			 	setTimeout(function(){
+			 		document.getElementById("game-text-p").classList.add("show")
+			 	},200);
+			}, 500);
+		}
+	</script>
+</body>
+</html>

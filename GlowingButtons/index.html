@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<style type="text/css">
+		html{
+			height:100vh;
+		}
+
+		body{
+			height:100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #2e2e2e;
+		}
+
+		.glow-btn{
+			height: 60px;
+			width: 60px;
+			border-radius: 50%;
+			background-color: #272323;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 1.5rem;
+			color: #868686;
+			cursor: pointer;
+			transition-duration: 200ms;
+			margin: 20px;
+		}
+
+		.g1:hover{
+			color: #ffa502;
+		    box-shadow: 0 0 20px #d35400;
+		    text-shadow: 0 0 15px #d35400;
+		}
+
+		.g2:hover{
+			color: white;
+		    box-shadow: 0 0 10px white;
+		    text-shadow: 0 0 15px white;
+		}
+
+		.g3:hover{
+			color: #3b5998;
+		    box-shadow: 0 0 20px #3b5998;
+		    text-shadow: 0 0 15px #3b5998;
+		}
+
+		.g4:hover{
+			color: red;
+		    box-shadow: 0 0 20px red;
+		    text-shadow: 0 0 15px red;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="glow-btn g1"><i class="fa fa-user"></i></div>
+	<div class="glow-btn g2"><i class="fa fa-adjust"></i></div>
+	<div class="glow-btn g3"><i class="fa fa-facebook-f"></i></div>
+	<div class="glow-btn g4"><i class="fa fa-times"></i></div>
+</body>
+</html>

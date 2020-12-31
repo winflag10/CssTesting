@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<style type="text/css">
+		html{
+			height:100vh;
+		}
+
+		body{
+			height:100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.spinner::before{
+			content: "";
+			position: absolute;
+			height: 50%;
+			width: 50%;
+			background-color: lightblue;
+			top:0;
+			right:0;
+			animation: rotate 1.5s infinite linear;
+			transform-origin: bottom left;
+		}
+
+		.spinner{
+			height: 100px;
+			width:100px;
+			background-color: lightgray;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			border-radius: 50%;
+			margin: 20px;
+		}
+
+		.spinner::after{
+			border-radius: 50%;
+			content: "";
+			position: absolute;
+			width: 80%;
+			height: 80%;
+			background-color: white;
+		}
+
+		.spinner2{
+			height: 60px;
+			width:60px;
+			background-color: inherit;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			border-radius: 50%;
+			border-top: solid 10px lightblue;
+			border-left: solid 10px lightgray;
+			border-right: solid 10px lightgray;
+			border-bottom: solid 10px lightgray;
+			animation: rotate 1s infinite linear;
+			margin: 20px;
+		}
+
+		.spinner3{
+			height: 80px;
+			width: 80px;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 20px;
+		}
+
+		.spinner3 .blob{
+			height: 100%;
+			width: 20px;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+		}
+
+		.spinner3 .blob::before{
+			height: 20px;
+			width: 40%;
+			content: "";
+			background-color: lightblue;
+			border-radius: 10%;
+			animation: fadeInOut 2s infinite linear;
+			opacity: 0.1;
+		}
+
+		.blob.b1{transform: rotate(30deg);}
+		.blob.b2{transform: rotate(60deg);}
+		.blob.b3{transform: rotate(90deg);}
+		.blob.b4{transform: rotate(120deg);}
+		.blob.b5{transform: rotate(150deg);}
+		.blob.b6{transform: rotate(180deg);}
+		.blob.b7{transform: rotate(210deg);}
+		.blob.b8{transform: rotate(240deg);}
+		.blob.b9{transform: rotate(270deg);}
+		.blob.b10{transform: rotate(300deg);}
+		.blob.b11{transform: rotate(330deg);}
+
+		.blob.b1::before{animation-delay: 167ms;}
+		.blob.b2::before{animation-delay: 334ms;}
+		.blob.b3::before{animation-delay: 501ms;}
+		.blob.b4::before{animation-delay: 668ms;}
+		.blob.b5::before{animation-delay: 835ms;}
+		.blob.b6::before{animation-delay: 1002ms;}
+		.blob.b7::before{animation-delay: 1169ms;}
+		.blob.b8::before{animation-delay: 1336ms;}
+		.blob.b9::before{animation-delay: 1503ms;}
+		.blob.b10::before{animation-delay: 1670ms;}
+		.blob.b11::before{animation-delay: 1837ms;}
+
+		.spinner4{
+			height: 80px;
+			width: 80px;
+			margin: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+
+		.spinner4::before{
+			content: "";
+			height: 80%;
+			width: 80%;
+			background-color: lightblue;
+			opacity: 0.8;
+			border-radius: 50%;
+			position: absolute;
+			animation: scaleOutHalf 2s infinite ease-in-out; 
+		}
+
+		.spinner4::after{
+			content: "";
+			height: 80%;
+			width: 80%;
+			background-color: lightblue;
+			opacity: 0.5;
+			border-radius: 50%;
+			position: absolute;
+			transform: scale(0);
+			animation: scaleInHalf 2s infinite ease-in-out; 
+		}
+
+		@keyframes rotate{
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(359deg);
+			}
+		}
+
+		@keyframes fadeInOut{
+			0%{opacity: 0.1;}
+			1%{opacity: 1;}
+			100%{opacity: 0.1;}
+		}
+
+		@keyframes scaleInHalf{
+			0%{transform: scale(0);}
+			50%{transform: scale(0.5);}
+			100%{transform: scale(0);}
+		}
+
+		@keyframes scaleOutHalf{
+			0%{transform: scale(1);}
+			50%{transform: scale(0.5);}
+			100%{transform: scale(1);}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="spinner"></div>
+	<div class="spinner2"></div>
+	<div class="spinner3">
+		<div class="blob b0"></div>
+		<div class="blob b1"></div>
+		<div class="blob b2"></div>
+		<div class="blob b3"></div>
+		<div class="blob b4"></div>
+		<div class="blob b5"></div>
+		<div class="blob b6"></div>
+		<div class="blob b7"></div>
+		<div class="blob b8"></div>
+		<div class="blob b9"></div>
+		<div class="blob b10"></div>
+		<div class="blob b11"></div>
+	</div>
+	<div class="spinner4"></div>
+</body>
+</html>
